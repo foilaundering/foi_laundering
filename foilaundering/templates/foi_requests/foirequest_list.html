@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+
+{% block hero %}
+  <div class="callout primary">
+    <div class="row column text-center">
+      <h1>FOI Laundering</h1>
+      <h2>Requests that need submitting</h2>
+    </div>
+  </div>
+{% endblock hero %}
+
+
+{% block content %}
+
+{% for request in object_list %}
+<section>
+  <h3>Request to: {{ request.receiving_authority.name }}</h3>
+  <h4>Text:</h4>
+  <blockquote>{{ request.foi_text|markdown  }}</blockquote>
+  <a href="https://www.whatdotheyknow.com/new/{{ request.receiving_authority.slug }}?default_letter={{ request.foi_text|urlencode }}&title={{ request.title }}&tags=foilaundering"
+    class="button">Submit this FOI Request</a>
+  <hr>
+</section>
+{% endfor %}
+
+{% endblock content %}

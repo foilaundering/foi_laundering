@@ -18,6 +18,11 @@ class Authority(models.Model):
 
 
 class FOIRequest(models.Model):
+    title = models.CharField(
+        blank=True,
+        max_length=255,
+        verbose_name="A one line summary of the information you are requesting, \
+        e.g. 'Crime statistics by ward level for Wales'")
     foi_text = models.TextField(blank=False, verbose_name="Your FOI Request")
     make_live_date = models.DateTimeField(
         blank=False, default=random_date_in_future)

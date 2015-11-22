@@ -10,3 +10,4 @@ psycopg2
 
 Pillow
 requests
+django-markdown-deux

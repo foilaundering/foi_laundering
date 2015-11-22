@@ -3,20 +3,24 @@
 {% block content %}
 
 <div class="columns large-6">
-  <h2>Civil Servants</h2>
-  <p>Working on something that you wish were in the public eye?</p>
-  <p>This tool allows you to make your work more open:</p>
+  <h2>I am a Civil Servant</h2>
+  <p>Know something that you wish was in the public eye?</p>
+  <a href="{% url "submit" %}" class="button large">Write anonymous FOI request</a>
+
+  <p>This tool allows you to secretly make your work more open:</p>
   <ol>
-    <li>Write your FOI request anonymously</li>
+    <li>Write an FOI request anonymously</li>
     <li>We store your request, only making it public at a random point in the next 10 weeks</li>
     <li>Members of the press or public can pick up your request and submit it under their own name</li>
   </ol>
-  <a href="{% url "submit" %}" class="button">Write new FOI request</a>
-
 </div>
 
 <div class="columns large-6">
-  <a href="{% url "list_requests" %}" class="button">View requests to submit</a>
+  <h2>I am an FOI activist </h2>
+  <p>Beautiful, purposeful FOI requests, ready for you to submit!</p>
+  <a href="{% url "list_requests" %}" class="button large">View requests to submit</a>
+  <p>Carefully crafted by anonymous civil servants, these save you
+  the time of having to think of something useful to request.</p>
 </div>
 
 {% endblock content %}

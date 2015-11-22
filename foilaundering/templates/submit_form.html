@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block hero %}
+  <div class="callout primary">
+    <div class="row column text-center">
+      <h1>FOI Laundering</h1>
+      <h2>Suggest a new FOI request</h2>
+    </div>
+  </div>
+{% endblock hero %}
+
+{% block content %}
+<div class="large-12">
+  <p>Write the request you want someone else to submit in the box below,
+    and pick the part of Government that the request is intended for.</p>
+  <p>This request will not be submitted yet, and no record of who you are
+    will be stored anywhere on our system.</p>
+  <p>Someone else will pick up your request and put their name to it.</p>
+  <p>They will only be able to see this request at a random time over the next
+    few weeks – this is so that no one can tell when you wrote the request,
+    making it harder to trace back to you.</p>
+    <hr></hr>
+    <p><strong>Do not write anything here that will allow you to be identified.</strong></p>
+    <p>The text here will be made public at some time in the next 10 weeks,
+      and at some point after that the department will get an email about it.</p>
+    <p>We don't know who you are, and never log any information about you.</p>
+    <hr></hr>
+</div>
+<div class="large-8 columns">
+  <form method=post>
+    {% csrf_token %}
+    {{ form }}
+    <p><button type="submit" class="button">Submit request</button></p>
+  </form>
+</div>
+<div class="large-4 columns">
+  <ul>
+    <p>Write your request in <strong>simple, precise language</strong>.</p>
+    <p>Ask for <strong>specific</strong> documents or information, this site is not suitable for general enquiries.</p>
+    <p><strong><a href="https://www.whatdotheyknow.com/help/requesting#focused">Keep it focused</a></strong>, you'll be more likely to get what you want.</p>
+
+  </ul>
+</div>
+
+
+{% endblock content %}
+
+{% block extra_js %}
+  <link href="{% static 'css/select2.min.css' %}" rel="stylesheet" />
+  <script src="{% static 'js/select2.min.js' %}"></script>
+  <script type="text/javascript">
+    $('select').select2();
+  </script>
+{% endblock extra_js %}

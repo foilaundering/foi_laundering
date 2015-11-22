@@ -9,3 +9,4 @@ django-model-utils
 psycopg2
 
 Pillow
+requests

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="columns large-6">
+  <h2>Civil Servants</h2>
+  <p>Working on something that you wish were in the public eye?</p>
+  <p>This tool allows you to make your work more open:</p>
+  <ol>
+    <li>Write your FOI request anonymously</li>
+    <li>We store your request, only making it public at a random point in the next 10 weeks</li>
+    <li>Members of the press or public can pick up your request and submit it under their own name</li>
+  </ol>
+  <a href="{% url "submit" %}" class="button">Write new FOI request</a>
+
+</div>
+
+<div class="columns large-6">
+  <button class="button">Submit an FOI request</button>
+
+</div>
+
+{% endblock content %}

@@ -123,7 +123,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 )
 
-PROJECT_APPS = ()
+PROJECT_APPS = (
+    'foi_requests',
+)
 
 INSTALLED_APPS += PROJECT_APPS
 
